@@ -1,4 +1,4 @@
-import imageCompression from 'browser-image-compression'; 
+import ImageCompression from "./browser-image-compression/dist/browser-image-compression";
 
 function PhotoUpload() {
     async function handleImageUpload(event) {
@@ -15,7 +15,7 @@ function PhotoUpload() {
         try {
           //set start point anywhere you want
           var start = new Date(); 
-          const compressedFile = await imageCompression(imageFile, options);
+          const compressedFile = await ImageCompression(imageFile, options);
           console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
           console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
           //when done,

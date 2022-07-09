@@ -25,9 +25,9 @@ interface Options {
     signal?: AbortSignal;
 }
 
-declare function imageCompression(image: File, options: Options): Promise<File>;
+declare function ImageCompression(image: File, options: Options): Promise<File>;
 
-declare namespace imageCompression {
+declare namespace ImageCompression {
     function getDataUrlFromFile(file: File): Promise<string>;
     function getFilefromDataUrl(dataUrl: string, filename: string, lastModified?: number): Promise<File>;
     function loadImage(src: string): Promise<HTMLImageElement>;
@@ -37,6 +37,6 @@ declare namespace imageCompression {
     function getExifOrientation(file: File): Promise<number>;
 }
 
-export as namespace imageCompression;
+export as namespace ImageCompression;
 
-export default imageCompression;
+export default ImageCompression;
